@@ -57,7 +57,8 @@ function makeComputer(type, color, weight) {
 
 
 var computer1 = makeComputer('Asus I7', 'black', 1.5) ;
-var computer2 = makeComputer('mac', 'gray', 1.3)
+var computer2 = makeComputer('mac', 'gray', 1.3) ;
+var computers = [computer1,computer2] ;
 
 // Write a function displayComputer that can be used to display one computer.
 
