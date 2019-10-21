@@ -46,13 +46,25 @@ Note: please write one or two lines here describing your solution.
 */
 
 function makeComputer(type, color, weight) {
-  // TODO: Your code here
+  var computerObj = {} ;                  //we create an empty object
+
+  computerObj['type'] = type ;                //we create the properties ('type','color','weight') and assign them the values givven as inputs
+  computerObj['color'] = color ;
+  computerObj['weight'] = weight ;
+
+  return computerObj ;                    //we return our object
 }
+
+
+var computer1 = makeComputer('Asus I7', 'black', 1.5) ;
+var computer2 = makeComputer('mac', 'gray', 1.3)
 
 // Write a function displayComputer that can be used to display one computer.
 
 function displayComputer(computer) {
-  // TODO: Your code here
+  
+   console.log(computer) ;             //our function will display the computer in the input
+
 }
 
 //=============================================================================
@@ -73,7 +85,9 @@ uppercaseAll(strArr); ==> [ 'HELLO', 'WORLD', 'WHIRLED', 'PEAS' ]
 */
 
 function uppercaseAll(arrayOfStrings) {
-  // TODO: your code here
+  return map(arrayOfStrings, function(element){               //for this case we use map that takes an array, 
+    return element.toUpperCase() ;                            //and for each element of that array will modify it to upper case and will return it in a new array
+  })
 }
 
 //=============================================================================
@@ -112,7 +126,9 @@ var data = [
 ];
 
 function highestPopulation(arrayOfObjects) {
-  // TODO: your code here
+  return filter(arrayOfObjects, function(element){        //we use filter because we wont return all the element of the input array
+     return element.population > 500000000 ;              // we return in a new object only the element that passes the test wich is population > 500 million    
+  })
 }
 
 //=============================================================================
@@ -132,7 +148,9 @@ Note: please write one or two lines here describing your solution.
 */
 
 function halveAll(numbers) {
-  // your code is here
+  return map(numbers, function(element){          //we use map so we return a new array with every element of the input array halved
+    return element/2 ;
+  })
 }
 
 //=============================================================================
@@ -147,8 +165,12 @@ values({first : 5, second: 'something' , third : 129}) ==> [5, 'something', 129]
 
 Note: please write one or two lines here describing your solution.
 */
-function values(obj) {
-  // TODO: your code here
+function values(obj) {                    // for this one we use each because we can control our output to be an array not an object like the input
+  var arrayOfValues = [] ;
+  each(obj, function(value, keys){        //we use each to iterate the object and push all its values in an array
+    arrayOfValues.push(value) ;
+  })
+  return arrayOfValues ;                  //we return an array ;
 }
 
 //Good Luck :))
